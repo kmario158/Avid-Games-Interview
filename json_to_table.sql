@@ -1,3 +1,4 @@
+CREATE PROCEDURE json_to_table(IN json_input JSON)
 BEGIN
 -- check if json is valid
 DECLARE is_valid BOOLEAN;
@@ -23,4 +24,4 @@ jsonTableResult AS (
 SELECT d.`key`, jt.value
 FROM data AS d
 JOIN jsonTableResult AS jt ON d.id = jt.id;
-END
+END;
